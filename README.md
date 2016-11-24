@@ -44,6 +44,20 @@ data1	data2	data3	data4
 该程序是用scala开放，并在spark上运行的，运行之前，需要将程序打成jar包，在spark上进行运行。运行命令如下：
  
 ```
-./bin/spark-submit --class pers.yangchen.IDTH.HbaseTest --packages com.databricks:spark-csv_2.10:1.2.0,org.joda:joda-convert:1.2 --jars mysql-connector-java-5.1.6.jar,hbase-server-1.1.0.jar,hbase-common-1.1.0.jar,hbase-client-1.1.0.jar,hbase-protocol-1.1.0.jar,htrace-core-3.1.0-incubating.jar,guava-12.0.1.jar --num-executors 6  --driver-memory 8G --executor-memory 25G --executor-cores 12 ImportDataToHbase.jar
+	./bin/spark-submit \
+	--class pers.yangchen.IDTH.HbaseTest \
+	--packages com.databricks:spark-csv_2.10:1.2.0, \
+	org.joda:joda-convert:1.2 \
+	--jars hbase-server-1.1.0.jar, \
+	hbase-common-1.1.0.jar, \
+	hbase-client-1.1.0.jar, \
+	hbase-protocol-1.1.0.jar, \
+	htrace-core-3.1.0-incubating.jar, \
+	guava-12.0.1.jar \
+	--num-executors 6  \
+	--driver-memory 8G \
+	--executor-memory 25G \
+	--executor-cores 12 \
+	ImportDataToHbase.jar
 ```
 
